@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "tutorialmod",
+	"version": "${version}",
+	"name": "Tutorial Mod",
+	"description": "kokoni setumei bun hairu",
+	"authors": [
+		"Mana7na!"
+	],
+	"contact": {
+		"homepage": "https://mana7na.net",
+		"sources": "https://github.com/MANAna7/Fablic-Tutorial-1.21.X"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/tutorialmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.mana7na.tutorialmod.TutorialMod"
+		],
+		"fabric-datagen": [
+			"net.mana7na.tutorialmod.TutorialModDataGenerator"
+		],
+		"client": [
+			"net.mana7na.tutorialmod.TutorialModClient"
+		]
+	},
+	"mixins": [
+		"tutorialmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
