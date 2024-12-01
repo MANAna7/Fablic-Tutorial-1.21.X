@@ -11,7 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
-    public static final ItemGroup RINK_GARNET_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
+    public static final ItemGroup PINK_GARNET_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(TutorialMod.MOD_ID, "pink_garnet_items"),
             FabricItemGroup.builder().icon(()-> new ItemStack(ModItems.PINK_GARNET))
                     .displayName(Text.translatable("itemgroup.tutorialmod.pink_garnet_items"))
@@ -19,10 +19,11 @@ public class ModItemGroups {
                         entries.add(ModItems.PINK_GARNET);
                         entries.add(ModItems.RAW_PINK_GARNET);
 
+                        entries.add(ModItems.CHISEL);
                     })
                     .build());
 
-    public static final ItemGroup RINK_GARNET_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
+    public static final ItemGroup PINK_GARNET_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(TutorialMod.MOD_ID, "pink_garnet_blocks"),
             FabricItemGroup.builder().icon(()-> new ItemStack(ModBlocks.PINK_GARNET_BLOCK))
                     .displayName(Text.translatable("itemgroup.tutorialmod.pink_garnet_blocks"))
