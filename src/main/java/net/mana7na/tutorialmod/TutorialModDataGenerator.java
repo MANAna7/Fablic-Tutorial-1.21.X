@@ -3,6 +3,8 @@ package net.mana7na.tutorialmod;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.mana7na.tutorialmod.datagen.ModBlockTagProvider;
+import net.mana7na.tutorialmod.datagen.ModItemTagProvider;
+import net.mana7na.tutorialmod.datagen.ModLootTableProvider;
 
 public class TutorialModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -10,5 +12,9 @@ public class TutorialModDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModItemTagProvider::new);
+		pack.addProvider(ModLootTableProvider::new);
+
+
 	}
 }
