@@ -1,0 +1,12 @@
+world.isClientは常にfalseになる、常に計算しているためらしい
+たぶんworld.isClientはfalseの時がゲーム稼働中とかそういうので、trueになっちゃったらまずいから時々if文で判定しているのではないかと予想
+
+ModBlocks.java
+//    .luminance()　光の設定を行う、state（状態）を取得することで可変値を代入可能
+
+PinkGarnetLampBlock
+appendPropertiesでプロパティを増やせる
+builder.add(CLICKED);
+
+BlockStateについて
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa29hb3piQmd2RmN2SDZSajl3ODNILTJjMWJKUXxBQ3Jtc0trUTh5Q0g5akVlMjlCUlMzbFRTYmZ0YzRubWgzVWtpRTl0d0NIM0k5Mjc5SE9jcGVoREwtLVFuS2JqVUR2czlvQ1Q3RUVfNFZWT1h2Y1FPQTg2QTltWm5mR2lJd3RjdkJIX3g5V1FRZVBzMkY0NzBrQQ&q=https%3A%2F%2Fdocs.fabricmc.net%2Fdevelop%2Fblocks%2Fblockstates&v=676AIyk9wBE

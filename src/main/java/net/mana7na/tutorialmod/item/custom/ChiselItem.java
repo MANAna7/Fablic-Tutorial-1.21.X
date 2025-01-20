@@ -1,6 +1,7 @@
 package net.mana7na.tutorialmod.item.custom;
 
 import net.mana7na.tutorialmod.block.ModBlocks;
+import net.mana7na.tutorialmod.component.ModDataComponentTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.Screen;
@@ -49,13 +50,18 @@ public class ChiselItem extends Item {
                 item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
 
                 world.playSound(null,context.getBlockPos(), SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS);
+//データコンポーネント- 座標を保存
+                context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
+
+//          nullを追加すればカスタムデータコンポーネント内のデータは消える
+//          context.getStack().set(ModDataComponentTypes.COORDINATES, null);
             }
         }
 
 
         return ActionResult.SUCCESS;
     }
-
+//プレイ中にツールチップに情報を追加できる
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         if(Screen.hasShiftDown()){
@@ -63,6 +69,11 @@ public class ChiselItem extends Item {
         }else{
             tooltip.add(Text.translatable("tooltip.tutorialmod.chisel"));
         }
+//もし座標を保存できていたら
+        if (stack.get(ModDataComponentTypes.COORDINATES) != null ){
+            tooltip.add(Text.literal("Last Block Changed at "+ stack.get(ModDataComponentTypes.COORDINATES)));
+        }
+
         super.appendTooltip(stack, context, tooltip, type);
     }
 }
