@@ -6,6 +6,7 @@ import net.mana7na.tutorialmod.item.custom.ChiselItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -29,6 +30,10 @@ public class ModItems {
     });
 
     public static final Item STARLIGHT_ASHES = registerItem("starlight_ashes", new Item(new Item.Settings()));
+
+    public static final Item PINK_GARNET_SWORD = registerItem("pink_garnet_sword",
+            new SwordItem(ModToolMaterials.PINK_GARNET,new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET,3,-2.4f))));
 
 
 
