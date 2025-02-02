@@ -54,5 +54,14 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.STARLIGHT_ASHES, Models.GENERATED);
 
+//        手持ちの持ち方にできる HANDHELD
+//        これをしないとアイテムの持ち方になっちゃう
+//        逆にこれを作れば自作の持ち方のクラスも作れる
+        itemModelGenerator.register(ModItems.PINK_GARNET_SWORD,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_PICKAXE,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_SHOVEL,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_AXE,Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_HOE,Models.HANDHELD);
+
     }
 }
