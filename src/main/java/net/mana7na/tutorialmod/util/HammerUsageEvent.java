@@ -16,6 +16,7 @@ import java.util.Set;
 
 public class HammerUsageEvent implements PlayerBlockBreakEvents.Before{
     // Done with the help of https://github.com/CoFH/CoFHCore/blob/c23d117dcd3b3b3408a138716b15507f709494cd/src/main/java/cofh/core/event/AreaEffectEvents.java
+    //破壊するブロック群のリストを作成し、一こずつループで破壊する、破壊したブロックはリストからremoveされる
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
 
     @Override
@@ -34,7 +35,9 @@ public class HammerUsageEvent implements PlayerBlockBreakEvents.Before{
                 }
 
                 HARVESTED_BLOCKS.add(position);
+                //ブロックの破壊を実行
                 serverPlayer.interactionManager.tryBreakBlock(position);
+                //実行しブロック破壊したとき、破壊予定のリストから破壊済みのブロックのポジションを削除
                 HARVESTED_BLOCKS.remove(position);
             }
         }
