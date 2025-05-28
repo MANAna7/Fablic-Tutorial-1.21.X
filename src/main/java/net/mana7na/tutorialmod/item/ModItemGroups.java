@@ -31,6 +31,8 @@ public class ModItemGroups {
                         entries.add(ModItems.PINK_GARNET_HOE);
 
                         entries.add(ModItems.PINK_GARNET_HAMMER);
+
+                        entries.add(ModItems.KAUPEN_BOW);
                     })
                     .build());
 

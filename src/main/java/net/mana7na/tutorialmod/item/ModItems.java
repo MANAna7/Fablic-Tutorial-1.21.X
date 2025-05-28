@@ -53,6 +53,9 @@ public class ModItems {
             new HammerItem(ModToolMaterials.PINK_GARNET,new Item.Settings()
                     .attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.PINK_GARNET,7,-3.8f))));
 
+    public static final Item KAUPEN_BOW = registerItem("kaupen_bow",
+            new Item(new Item.Settings().maxDamage(500)));
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(TutorialMod.MOD_ID,name), item);
     }
