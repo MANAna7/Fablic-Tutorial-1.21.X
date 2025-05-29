@@ -12,9 +12,13 @@ public class ModModelPredicates {
     public static void registerModelPredicates() {
         ModelPredicateProviderRegistry.register(ModItems.CHISEL, Identifier.of(TutorialMod.MOD_ID, "used"),
                 (stack, world, entity, seed) -> stack.get(ModDataComponentTypes.COORDINATES) != null ? 1f : 0f);
+
+        registerCustomBow(ModItems.KAUPEN_BOW);
     }
+    //pull 引っ張る、pulling引き寄せ、引いている最中
+    //上のregisterModelPredicatesにregisterCustomBowで宣言する、以下の記述はregisterCustomBowの中身
     private static void registerCustomBow(Item item){
-        ModelPredicateProviderRegistry.register(Items.BOW, Identifier.ofVanilla("pull"), (stack, world, entity, seed) -> {
+        ModelPredicateProviderRegistry.register(item, Identifier.ofVanilla("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0F;
             } else {
@@ -22,7 +26,7 @@ public class ModModelPredicates {
             }
         });
         ModelPredicateProviderRegistry.register(
-                Items.BOW,
+                item,
                 Identifier.ofVanilla("pulling"),
                 (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F
         );
